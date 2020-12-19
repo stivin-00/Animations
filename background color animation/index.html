@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section></section>
+
+    <script>
+       const colors = [
+           '#2196f3',
+           '#e91e63',
+           '#ffeb3b',
+           '#74ff1d',
+       ]
+
+
+
+        function createSquare() {
+            const section = document.querySelector('section');
+            const square = document.createElement('span');
+
+            var size = Math.random() * 50;
+
+            square.style.width = 10 + size +'px';
+            square.style.height = 10 + size +'px';
+
+            square.style.top = Math.random() * innerHeight + 'px';
+            square.style.left = Math.random() * innerWidth + 'px';
+
+            const bg = colors[Math.floor(Math.random() * colors.length)];
+            square.style.background = bg;
+
+            section.appendChild(square);
+            setTimeout(() =>{
+                square.remove()
+            }, 800)
+
+        }
+
+        setInterval(createSquare , 2)
+    </script>
+</body>
+</html>
